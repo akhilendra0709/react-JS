@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputBox from "./components/index.js";
+import InputBox from "./components/InputBox.jsx";
 import useCurrencyInfo from "./hooks/useCurrencyInfo.js";
 import "./App.css";
 
@@ -62,6 +62,7 @@ function App() {
                 onCurrencyChange={(currency) => {
                   setTo(currency);
                 }}
+                value={convert}
                 selectCurrency={to}
                 amountDisable
               />
@@ -70,7 +71,7 @@ function App() {
               type="submit"
               className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg"
             >
-              Convert{from.toUpperCase()} to {to.toUpperCase()}
+              Convert {from.toUpperCase()} to {to.toUpperCase()}
             </button>
           </form>
         </div>
