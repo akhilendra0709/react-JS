@@ -1,7 +1,6 @@
 import { useState } from "react";
 import InputBox from "./components/InputBox.jsx";
 import useCurrencyInfo from "./hooks/useCurrencyInfo.js";
-import "./App.css";
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -23,7 +22,7 @@ function App() {
     <div
       className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/342008/pexels-photo-342008.jpeg?auto=compress&cs=tinysrgb&w=600')`,
+        backgroundImage: `url(https://i.pinimg.com/originals/9e/10/cb/9e10cbab4e09f79738f1f002c0841a9b.png)`,
       }}
     >
       <div className="w-full">
@@ -31,6 +30,7 @@ function App() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              convert();
             }}
           >
             <div className="w-full mb-1">
@@ -38,10 +38,8 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOptions={options}
-                onCurrencyChange={(currency) => {
-                  setAmount(currency);
-                }}
-                onAmountChange
+                onCurrencyChange={(currency) => setAmount(currency)}
+                onAmountChange={(amount) => setAmount(amount)}
                 selectCurrency={from}
               />
             </div>
@@ -59,9 +57,7 @@ function App() {
                 label="To"
                 amount={convertedAmount}
                 currencyOptions={options}
-                onCurrencyChange={(currency) => {
-                  setTo(currency);
-                }}
+                onCurrencyChange={(currency) => setTo(currency)}
                 value={convert}
                 selectCurrency={to}
                 amountDisable
