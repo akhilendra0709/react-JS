@@ -20,6 +20,7 @@ function Signup() {
         const userData = await authService.getCurrentUser();
         if (userData) dispatch(login(userData));
         navigate("/");
+        alert("Signup successful!!!");
       }
     } catch (error) {
       setError(error.message);
