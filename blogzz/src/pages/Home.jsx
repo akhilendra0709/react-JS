@@ -15,11 +15,19 @@ function Home() {
 
   if (posts.length === 0) {
     return (
-      <div className="w-full py-8 mt-4 text-center">
+      <div className="w-full py-8 mt-4">
         <Container>
-          <div className="flex flex-wrap">
-            <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold hover:text-gray-500">
+          <div className="flex flex-col items-center justify-center text-center">
+            <div className="p-8">
+              <div>
+                <img
+                  width="480"
+                  height="480"
+                  src="https://img.icons8.com/doodle/1024/question-mark--v1.png"
+                  alt="question-mark"
+                />
+              </div>
+              <h1 className="text-6xl font-bold text-orange-100">
                 Login to read posts
               </h1>
             </div>
